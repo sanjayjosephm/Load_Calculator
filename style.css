@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+
+#cbmForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    column-gap: 5px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h3{
+    padding-top: 25px ;
+    font-size: inherit;
+    font-weight: 400;
+}
+body{
+    text-align: center;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    /* flex-direction: column; */
+}
+input{
+    border: 1px solid grey;
+    width: 6.5rem;
+    height: 2rem;
+    transition: .2 ease-in;
+}
+input:hover{
+    border: 2px solid rgb(16, 16, 232);
+}
+label{
+    font-size: small;
+}
+.length-section,.width-section,.height-section,.quantity-section,.weight-section,.name-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#Next{
+    width: 3rem;
+    height: 2rem;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+
+}
+
+#Next:hover{
+    background-color: rgb(16, 16, 232);
+    color: white;
+}
+#auto{
+    width: 3rem;
+    height: 2rem;
+    margin-bottom: 4px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#auto:hover{
+    background-color: rgb(16, 16, 232);
+    color: white;
+}
+
+#addCargo{
+    height: 2rem;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid rgb(16, 16, 232);
+    background-color: white;
+    transition: .3 ease-in;
+    cursor: pointer;
+}
+
+#addCargo:hover{
+    background-color: rgb(16, 16, 232);
+    color: white;
+}
+i{
+    font-size: large;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.feet20Data{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0 2rem;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    text-align: left;
+}
+.feet40Data{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0 2rem;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    text-align: left;
+}
+.hq40Data{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0 2rem;
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    text-align: left;
+}
+
+.data-information{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+}
+
+
+/* .fucntionality{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+} */
+select{
+    background-color: rgb(238, 238, 238);
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    font-size: 1em;
+    line-height: 1.5em;
+    padding: 0.1em 1.5em 0.2em 0.6em;
+    margin: 0;      
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+    linear-gradient(45deg, transparent 50%, rgb(255, 255, 255) 50%),
+    linear-gradient(135deg, rgb(255, 255, 255) 50%, transparent 50%),
+    radial-gradient(#000000 70%, transparent 72%);
+    background-position:
+  calc(100% - 14px) calc(1em + -3px), calc(100% - 10px) calc(1em + -3px), calc(97% - 0.2em) 0.4em;
+    background-size:
+    4px 4px,
+    4px 4px,
+    1em 1em;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+span.same{
+    color: gray;
+    font-size: larger;
+    font-weight: 600;
+}
+
+
+#Disclaimer{
+    margin-top: 50px;
+}
+#Disclaimer p span{
+    color: red;
+}

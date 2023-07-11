@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/04b6d69663.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 style="color: rgb(16, 16, 232);">Load Calculator</h1>
+    <div class="hero-section">
+        <h3>Cargo dimensions have to be entered in centimeters (cm) and cargo weight in kilogram (kg)!</h3>
+        <!-- <button id="addCargo" value="addCargo">Add Cargo</button> -->
+        <form id="cbmForm">
+            <!-- dimensions input section -->
+            <div class="form">
+                <div class="name-section">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" step="0" placeholder="Cargo 1" required><br>
+                </div>
+                <div class="length-section">
+                    <label for="length">Length (CM)</label>
+                    <input type="number" id="length" step="0" placeholder="Length" required><br>
+                </div>
+                <div class="width-section">
+                    <label for="width">Width (CM)</label>
+                    <input type="number" id="width" step="0" placeholder="Width" required><br>
+                </div>
+                <div class="height-section">
+                    <label for="height">Height (CM)</label>
+                    <input type="number" id="height" step="0" placeholder="Height" required><br>
+                </div>
+                <div class="quantity-section">
+                    <label for="height"># of units</label>
+                    <input type="number" id="quantity" step="0" placeholder="Quantity" required><br>
+                </div>
+                <div class="weight-section">
+                    <label for="height">Weight <span>(in kg)</span></label>
+                    <input type="number" id="weight" step="0" placeholder="Weight" required><br>
+                </div>
+                <!-- <div class="remove-section">
+                    <i class="fa-solid fa-trash" id="remove" style="color: #1010e8;"></i>
+                </div> -->
+            </div>
+        </form>
+        <button id="Next">Next</button>
+
+        <select name="container" id="container">
+            <option value="20Feet">20' dv</option>
+            <option value="40Feet">40' dv</option>
+            <option value="40Hq">40' hq</option>
+        </select>
+
+
+        <div class="data-information">
+            <div class="feet20Data">
+                <div class="total complete" id="total"></div>
+                <div class="cbm complete" id="cbm"></div>
+                <div class="max_boxes complete" id="max_boxes"></div>
+                <div class="vol_per_container complete" id="vol_per_container"></div>
+                <div class="cargo-density complete" id="cargo-density"></div>
+                <div class="wt_per_container complete" id="wt_per_container"></div>
+                <div class="max_containers complete" id="max_containers"></div>
+            </div>
+            <div class="feet40Data">
+           
+                <div class="total complete" id="total1"></div>
+                <div class="cbm complete" id="cbm1"></div>
+                <div class="max_boxes complete" id="max_boxes1"></div>
+                <div class="vol_per_container complete" id="vol_per_container1"></div>
+                <div class="cargo-density complete" id="cargo-density1"></div>
+                <div class="wt_per_container complete" id="wt_per_container1"></div>
+                <div class="max_containers complete" id="max_containers1"></div>
+            </div>
+            <div class="hq40Data">
+              
+                <div class="total complete" id="total2"></div>
+                <div class="cbm complete" id="cbm2"></div>
+                <div class="max_boxes complete" id="max_boxes2"></div>
+                <div class="vol_per_container complete" id="vol_per_container2"></div>
+                <div class="cargo-density complete" id="cargo-density2"></div>
+                <div class="wt_per_container complete" id="wt_per_container2"></div>
+                <div class="max_containers complete" id="max_containers2"></div>
+            </div>
+
+        </div>
+        <button id="auto" style="display: none;">Auto</button>
+    </div>
+    <div id="Disclaimer"></div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
