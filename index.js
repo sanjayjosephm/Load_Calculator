@@ -1,4 +1,4 @@
-// const addCargo = document.getElementById("addCargo")
+const addCargo = document.getElementById("addCargo")
 const submit = document.getElementById("Next")
 const form = document.getElementById("cbmForm");
 //datas
@@ -63,9 +63,9 @@ function display20Feet(length,height,width,quantity,weight,cbmvalue){
     if(Number.isInteger(noOfContainers20feet)===false){
         noOfContainers20feet = Math.floor(noOfContainers20feet+1)
     }
-
+    const cbmTotal = (length * width * height * quantity) / 1000000;
     total.innerHTML = `<span class="same">20dv</span><br><p>Total : ${quantity} packages</p>`
-    cbm.innerHTML = `<p>Total Cargo volume : ${cbmvalue} m<sup>3</sup></p>`
+    cbm.innerHTML = `<p>Total Cargo volume : ${cbmTotal} m<sup>3</sup></p>`
     max_boxes.innerHTML = `<p>Total Cargo per container # : ${noOfBoxes20feet}</p>`
     wt_per_container.innerHTML = `<p>Total Cargo weight per container # : ${noOfBoxes20feet*weight}kG</p>`
     cargo_density.innerHTML = `<p>Total Cargo Weight: ${quantity*weight} kg</p>`
@@ -79,8 +79,9 @@ function display40Feet(length,height,width,quantity,weight,cbmvalue){
     if(Number.isInteger(noOfContainers40feet)===false){
         noOfContainers40feet = Math.floor(noOfContainers40feet+1)
     }
+    const cbmTotal = (length * width * height * quantity) / 1000000;
     total1.innerHTML = `<span class="same">40dv</span><br><p>Total : ${quantity} packages</p>`
-    cbm1.innerHTML = `<p>Total Cargo volume : ${cbmvalue} m<sup>3</sup></p>`
+    cbm1.innerHTML = `<p>Total Cargo volume : ${cbmTotal} m<sup>3</sup></p>`
     cargo_density1.innerHTML = `<p>Total Cargo Weight: ${quantity*weight} kg</p>`
     max_boxes1.innerHTML = `<p>Total boxes per unit # : ${noOfBoxes40feet}</p>`
     wt_per_container1.innerHTML = `<p>Total Cargo weight per container # : ${noOfBoxes40feet*weightValue.value}kg</p>`
@@ -94,8 +95,9 @@ function display40HighCube(length,height,width,quantity,weight,cbmvalue){
     if(Number.isInteger(noOfContainers40hq)===false){
         noOfContainers40hq = Math.floor(noOfContainers40hq+1)
     }
+    const cbmTotal = (length * width * height * quantity) / 1000000;
     total2.innerHTML = `<span class="same">40Hq</span><br><p>Total : ${quantity} packages</p>`
-    cbm2.innerHTML = `<p>Total Cargo volume : ${cbmvalue} m<sup>3</sup></p>`
+    cbm2.innerHTML = `<p>Total Cargo volume : ${cbmTotal} m<sup>3</sup></p>`
     cargo_density2.innerHTML = `<p>Total Cargo Weight: ${quantity*weight} kg</p>`
     max_boxes2.innerHTML = `<p>Total boxes per unit # : ${noOfBoxes40hq}</p>`
     wt_per_container2.innerHTML = `<p>Total Cargo weight per container # : ${noOfBoxes40hq*weight}kg</p>`
@@ -130,6 +132,24 @@ function remove40Hq(){
     vol_per_container2.innerHTML = "";
     max_containers2.innerHTML = "";
 }
+
+const cargoList = [];
+function addCargoToList() {
+    const cargo = {
+      name: nameInput.value,
+      length: parseFloat(lengthInput.value),
+      width: parseFloat(widthInput.value),
+      height: parseFloat(heightInput.value),
+      quantity: parseInt(quantityValue.value),
+      weight: parseFloat(weightValue.value),
+    };
+  
+    cargoList.push(cargo); 
+    console.log(cargoList)// Add the cargo object to the list
+}
+
+// console.log(cargoList[0].length)
+
 // addCargo.addEventListener("click", function(event) {
 //     event.preventDefault();
 //     if(clickCount<5){
@@ -177,6 +197,8 @@ function remove40Hq(){
 //         removeSection.innerHTML = `
 //         <i class="fa-solid fa-trash" id="remove-spam" onclick="removeRow(this)" style="color: #1010e8;"></i>
 //         `;
+
+        
 //         newRow.appendChild(nameSection);
 //         newRow.appendChild(lengthSection);
 //         newRow.appendChild(widthSection);
@@ -184,7 +206,15 @@ function remove40Hq(){
 //         newRow.appendChild(quantitySection);
 //         newRow.appendChild(weightSection);
 //         newRow.appendChild(removeSection);
+        
+//         const name = nameInput.value;
+//         const length = parseFloat(lengthInput.value);
+//         const width = parseFloat(widthInput.value);
+//         const height = parseFloat(heightInput.value);
+//         const quantity = parseInt(quantityValue.value);
+//         const weight = parseFloat(weightValue.value);
     
+//         addCargoToList(); 
 //         // Append the new row to the form
 //         form.appendChild(newRow);
 //         clickCount++;
@@ -192,9 +222,9 @@ function remove40Hq(){
 //             addCargo.disabled = true;
 //         }
 //     }
-
+    
 // });
-  
+
 // function removeRow(element) {
 //     const row = element.parentNode.parentNode; 
 //     row.remove();
@@ -263,7 +293,7 @@ submit.addEventListener('click',function(event){
 function disclaimer(){
     const disc = document.getElementById("Disclaimer")
     disc.innerHTML=`
-        <p><span>NOTE: </span>The values vary according to the region. It is advised to check with the professional fright forwarder</p>
+        <p><span>NOTE: </span>The values will vary according to the region. It is advised to check with the professional fright forwarder</p>
     `
 }
 
